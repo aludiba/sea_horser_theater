@@ -7,6 +7,7 @@
 
 #import "SHTMBProgressManager.h"
 #import <MBProgressHUD.h>
+#import "SHTToolsManager.h"
 
 @implementation SHTMBProgressManager
 
@@ -14,7 +15,7 @@
     if (view) {
         [MBProgressHUD showHUDAddedTo:view animated:YES];
     } else {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        UIWindow *window = [SHTToolsManager currentWindow];
         [MBProgressHUD showHUDAddedTo:window animated:YES];
     }
 }
@@ -23,13 +24,13 @@
     if (view) {
         [MBProgressHUD hideHUDForView:view animated:YES];
     } else {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        UIWindow *window = [SHTToolsManager currentWindow];
         [MBProgressHUD hideHUDForView:window animated:YES];
     }
 }
 
 + (void)showTextHUD:(nullable UIView *)view withText:(nullable NSString *)text andSubText:(nullable NSString *)subText {
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    UIWindow *window = [SHTToolsManager currentWindow];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view ? view : window  animated:YES];
     hud.label.text = text;  // 主文字
     hud.detailsLabel.text = subText; // 可选：副标题
@@ -39,7 +40,7 @@
 }
 
 + (void)showText:(nullable UIView *)view withText:(nullable NSString *)text andSubText:(nullable NSString *)subText  isBottom:(BOOL)isBottom {
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    UIWindow *window = [SHTToolsManager currentWindow];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view ? view : window animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = text;
@@ -55,7 +56,7 @@
 }
 
 + (void)showActionResult:(nullable UIView *)view isSuccess:(BOOL)isSuccess {
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    UIWindow *window = [SHTToolsManager currentWindow];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view ? view : window animated:YES];
     hud.mode = MBProgressHUDModeCustomView;
     if (isSuccess) {

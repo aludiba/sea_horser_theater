@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 显示成功/失败的提示图标
 + (void)showActionResult:(nullable UIView *)view isSuccess:(BOOL)isSuccess;
+
 @end
 
 NS_ASSUME_NONNULL_END

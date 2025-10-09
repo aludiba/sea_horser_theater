@@ -72,7 +72,7 @@
     NSString *confirmTitle = params[@"confirmTitle"];
     NSString *protocolHeader = params[@"protocolHeader"];
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIWindow *keyWindow = [SHTToolsManager currentWindow];
     UIView *bgView = [[UIView alloc] initWithFrame:keyWindow.bounds];
     bgView.backgroundColor = [SHT_BACK_COLOR_DARK colorWithAlphaComponent:0.5];
 

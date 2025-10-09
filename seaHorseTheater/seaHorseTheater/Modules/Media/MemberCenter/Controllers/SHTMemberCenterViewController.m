@@ -50,7 +50,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.membershipPopupView && !self.membershipPopupView.superview) {
-        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        UIWindow *keyWindow = [SHTToolsManager currentWindow];
         [keyWindow addSubview:self.membershipPopupView];
     }
 }

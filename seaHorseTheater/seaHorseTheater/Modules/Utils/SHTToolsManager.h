@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 // json格式文件序列化
 + (NSDictionary *)serializationFromJson:(NSString *)path;
 
++ (UIWindow *)currentWindow;
+
 + (UIViewController *)getTopViewController;
 
 + (void)downloadCoverImageForPlayletInfo:(DJXPlayletInfoModel *)playletInfo;

@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "SHTConfigID.h"
 #import "UIView+SHT.h"
+#import "SHTToolsManager.h"
 
 typedef NS_ENUM(NSUInteger, SHTToastType) {
     SHTToastTypeDefault, // 使用DJXSDK默认的toast
@@ -22,7 +23,7 @@ typedef NS_ENUM(NSUInteger, SHTToastType) {
 #define SHT_STATUS_BAR_HEIGHT \
 ^CGFloat{ \
     if (@available(iOS 13.0, *)) { \
-        UIWindow *window = UIApplication.sharedApplication.windows.firstObject; \
+        UIWindow *window = [SHTToolsManager currentWindow]; \
         return window.windowScene.statusBarManager.statusBarFrame.size.height; \
     } else { \
         return UIApplication.sharedApplication.statusBarFrame.size.height; \

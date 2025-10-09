@@ -14,7 +14,7 @@
 @implementation SHTToolsManager
 
 + (UIViewController *)topViewController {
-    UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
+    UIViewController *rootVC = [SHTToolsManager currentWindow].rootViewController;
     return [self topViewControllerFrom:rootVC];
 }
 
@@ -63,6 +63,26 @@
     return json;
 }
 
++ (UIWindow *)currentWindow {
+    UIWindow *window = nil;
+    if (@available(iOS 13.0, *)) {
+        NSSet *scenes = UIApplication.sharedApplication.connectedScenes;
+        for (UIWindowScene *scene in scenes) {
+            if (scene.activationState == UISceneActivationStateForegroundActive) {
+                for (UIWindow *w in scene.windows) {
+                    if (w.isKeyWindow) {
+                        window = w;
+                        break;
+                    }
+                }
+            }
+        }
+    } else {
+        window = UIApplication.sharedApplication.keyWindow;
+    }
+    return window;
+}
+
 + (UIViewController *)getTopViewController {
     // 获取 keyWindow（兼容 iOS 13+ Scene）
     UIWindow *keyWindow = nil;
@@ -74,7 +94,7 @@
             }
         }
     } else {
-        keyWindow = [UIApplication sharedApplication].keyWindow;
+        keyWindow = [self currentWindow];
     }
 
     UIViewController *rootVC = keyWindow.rootViewController;

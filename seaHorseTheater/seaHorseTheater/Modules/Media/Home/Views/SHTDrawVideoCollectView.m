@@ -98,10 +98,10 @@
         [self collectDynamicAction:isSelected];
     } else {
         __weak typeof(self) weakSelf = self;
-        [SHTAlertHelper showAlertWithTitle:@"确认取消追剧吗？"
-                                   message:@"取消后可能找不到本剧哦～"
-                             cancelBtnText:@"再想想"
-                            confirmBtnText:@"确认"
+        [SHTAlertHelper showAlertWithTitle:NSLocalizedString(@"confirm_unfollow_series", nil)
+                                   message:NSLocalizedString(@"confirm_unfollow_series", nil)
+                             cancelBtnText:NSLocalizedString(@"maybe_later", nil)
+                            confirmBtnText:NSLocalizedString(@"confirm", nil)
                               inController:nil
                               cancelAction:nil confirmAction:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;

@@ -62,3 +62,5 @@
 "friendly_reminder" = "Friendly Reminder";
 "recently_watched" = "Recently Watched";
 "total_episodes" = "Total %ld Episodes";
+"confirm_unfollow_series" = "Are you sure you want to unfollow this series?";
+"confirm_unfollow_series" = "You might not be able to find this series after unfollowing~";

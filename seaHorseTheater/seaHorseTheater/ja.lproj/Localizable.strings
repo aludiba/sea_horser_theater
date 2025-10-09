@@ -60,3 +60,5 @@
 "friendly_reminder" = "ご注意";
 "recently_watched" = "最近の視聴";
 "total_episodes" = "全 %ld 話";
+"confirm_unfollow_series" = "このドラマのフォローを解除してもよろしいですか？";
+"confirm_unfollow_series" = "フォローを解除すると、このドラマが見つからなくなるかもしれません～";

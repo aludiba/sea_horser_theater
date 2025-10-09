@@ -60,3 +60,5 @@
 "friendly_reminder" = "溫馨提示";
 "recently_watched" = "最近觀看";
 "total_episodes" = "共 %ld 集";
+"confirm_unfollow_series" = "確認取消追劇嗎？";
+"confirm_unfollow_series" = "取消後可能找不到本劇哦～";

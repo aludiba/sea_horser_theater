@@ -115,7 +115,11 @@
 }
 
 - (void)splashAdLoadFail:(BUSplashAd *)splashAd error:(BUAdError *)error {
-    NSLog(@"开屏广告加载失败-shtSplashAd:%@, error:%@", splashAd, error);
+    NSLog(@"❌❌❌ [穿山甲] 开屏广告加载失败 ❌❌❌");
+    NSLog(@"错误码: %ld", (long)error.code);
+    NSLog(@"错误域: %@", error.domain);
+    NSLog(@"错误描述: %@", error.localizedDescription);
+    NSLog(@"错误详情: %@", error.userInfo);
     [self loadHome];
 }
 

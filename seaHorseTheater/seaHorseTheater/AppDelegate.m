@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+DJXDelegate.h"
 #import "AppDelegate+ADSDK.h"
-//#import "SHTKaiPingADViewController.h"
+#import "SHTKaiPingADViewController.h"
 #import "SHTGoogleKaiPingADViewController.h"
 #import "SHTTabBarController.h"
 #import "SHTKeychainHelper.h"
@@ -50,9 +50,9 @@
     [self requestIDFAIfNeeded];
     [self setupADSDK:^(BOOL success) {
         if (success) {
-//            [self setupPangrowthSDK];
+            [self setupPangrowthSDK];
             dispatch_async(dispatch_get_main_queue(), ^{
-//                self.window.rootViewController = [[SHTKaiPingADViewController alloc] init];
+                self.window.rootViewController = [[SHTKaiPingADViewController alloc] init];
                 self.window.rootViewController = [[SHTGoogleKaiPingADViewController alloc] init];
                 [self.window makeKeyAndVisible];
             });

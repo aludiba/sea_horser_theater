@@ -53,7 +53,7 @@
             [self setupPangrowthSDK];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.window.rootViewController = [[SHTKaiPingADViewController alloc] init];
-                self.window.rootViewController = [[SHTGoogleKaiPingADViewController alloc] init];
+                // self.window.rootViewController = [[SHTGoogleKaiPingADViewController alloc] init];
                 [self.window makeKeyAndVisible];
             });
         }
